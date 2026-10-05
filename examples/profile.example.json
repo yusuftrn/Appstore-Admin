@@ -1,0 +1,5 @@
+{
+  "issuer_id": "ISSUER_ID",
+  "key_id": "KEY_ID",
+  "private_key": "AuthKey.p8"
+}

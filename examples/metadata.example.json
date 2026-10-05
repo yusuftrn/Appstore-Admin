@@ -1,0 +1,14 @@
+{
+  "format": 1,
+  "appId": "APPLE_ID",
+  "bundleId": "com.example.app",
+  "platform": "IOS",
+  "versionId": "VERSION_ID",
+  "appInfoId": "APP_INFO_ID",
+  "locales": {
+    "en-US": {
+      "appInfo": {"name": "Example App", "subtitle": "A fictional listing"},
+      "version": {"description": "Replace with your own app description.", "keywords": "example,demo", "supportUrl": "https://example.com/support"}
+    }
+  }
+}

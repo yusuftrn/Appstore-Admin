@@ -1,0 +1,4 @@
+interface:
+  display_name: "App Store Admin"
+  short_description: "Manage App Store metadata and screenshots safely"
+  default_prompt: "Use $appstore-admin to prepare an App Store metadata update for my selected app."

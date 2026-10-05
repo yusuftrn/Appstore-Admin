@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77,<83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "appstore-admin"
+version = "1.0.1"
+description = "Local App Store Connect metadata administration with reviewed plans and private backups"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+dependencies = []
+keywords = ["app-store-connect", "apple", "cli", "codex", "metadata"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Operating System :: POSIX",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Build Tools",
+]
+
+[project.optional-dependencies]
+dev = ["build>=1.2,<2", "bandit>=1.8,<2"]
+
+[project.scripts]
+appstore-admin = "appstore_admin.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+appstore_admin = ["data/*.json"]
+
+[tool.setuptools.data-files]
+"share/appstore-admin/skills/appstore-admin" = ["skills/appstore-admin/SKILL.md"]
+"share/appstore-admin/skills/appstore-admin/agents" = ["skills/appstore-admin/agents/openai.yaml"]
+"share/appstore-admin/skills/appstore-admin/scripts" = ["skills/appstore-admin/scripts/admin.py"]
+"share/appstore-admin/skills/appstore-admin/references" = ["skills/appstore-admin/references/workflow.md"]
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv", "build", "dist"]
+# JSON API framing has no executable deserialization. MD5 is required by Apple
+# for asset checksum matching; SHA-256 protects local integrity separately.
+skips = ["B324"]

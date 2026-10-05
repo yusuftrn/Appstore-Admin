@@ -1,0 +1,36 @@
+# Credentials and runtime data never belong in this repository.
+.local/
+.account-import-*/
+account/
+accounts/
+profiles/
+backups/
+runs/
+plans/
+exports/
+.env
+.env.*
+*.p8
+*.pem
+*.key
+profile.json
+credentials*.json
+*metadata-export*.json
+*plan.json
+*receipt.json
+*journal.json
+*manifest.json
+
+# Development outputs
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.coverage
+htmlcov/
+.pytest_cache/
+.bandit-cache/
+.DS_Store
